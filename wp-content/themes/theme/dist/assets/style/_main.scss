@@ -1,0 +1,541 @@
+:root {
+  --f-body: "Poppins";
+  --f-title: "Standly";
+  --f-cta: "inter";
+  --primary: #6bbc3a;
+  --secondary: #e7b55e;
+  --black: #000;
+  --white: #fff;
+  --neutral-900: #112722;
+  --neutral-800: #1f3731;
+  --neutral-700: #3c4241;
+  --neutral-600: #4b635d;
+  --neutral-500: #6b7280;
+  --neutral-400: #9ca3af;
+  --neutral-300: #d1d5db;
+  --neutral-200: #e5e7eb;
+  --neutral-100: #f3f4f6;
+  --neutral-50: #f9fafb;
+  --gray-8: #37514b;
+  --green: #007f4b;
+  --green-2: #90e35c;
+  --green-3: #004a39;
+  --green-4: #01604a;
+  --green-footer: #004a39;
+  --green-footer-2: #003122;
+}
+body {
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: var(--primary);
+  }
+  &:visited {
+    color: unset;
+  }
+}
+figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: max-content;
+  }
+}
+input,
+textarea,
+select {
+  outline: 0;
+  background: transparent;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+$m-17: 1699px;
+$m-16: 1599px;
+$m-14: 1439px;
+$m-13: 1399px;
+$m-12: 1279px;
+$m-11: 1199px;
+$m-10: 1023px;
+$m-9: 991px;
+$m-7: 767px;
+$m-6: 667px;
+$m-4: 480px;
+
+
+@mixin Responsive($screen) {
+  @if $screen == m-17 {
+    @media only screen and (max-width: $m-17) {
+      @content;
+    }
+  } @else if $screen == m-16 {
+    @media only screen and (max-width: $m-16) {
+      @content;
+    }
+  } @else if $screen == m-14 {
+    @media only screen and (max-width: $m-14) {
+      @content;
+    }
+  } @else if $screen == m-13 {
+    @media only screen and (max-width: $m-13) {
+      @content;
+    }
+  } @else if $screen == m-12 {
+    @media only screen and (max-width: $m-12) {
+      @content;
+    }
+  } @else if $screen == m-11 {
+    @media only screen and (max-width: $m-11) {
+      @content;
+    }
+  } @else if $screen == m-10 {
+    @media only screen and (max-width: $m-10) {
+      @content;
+    }
+  } @else if $screen == m-9 {
+    @media only screen and (max-width: $m-9) {
+      @content;
+    }
+  } @else if $screen == m-7 {
+    @media only screen and (max-width: $m-7) {
+      @content;
+    }
+  } @else if $screen == m-6 {
+    @media only screen and (max-width: $m-6) {
+      @content;
+    }
+  } @else if $screen == m-4 {
+    @media only screen and (max-width: $m-4) {
+      @content;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  @include Responsive(m-14) {
+    max-width: 100%;
+    padding: 0 60px;
+  }
+  @include Responsive(m-12) {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+  @include Responsive(m-7) {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}
+
+// ----------------------- Text heading style library -----------------------
+.text-heading {
+  font-family: var(--f-body);
+  &-h1 {
+    font-size: 60px;
+    line-height: 126%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 52px;
+    }
+    @include Responsive(m-11) {
+      font-size: 48px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 40px;
+    }
+  }
+  &-h2 {
+    font-size: 48px;
+    line-height: 126.6%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 40px;
+    }
+    @include Responsive(m-11) {
+      font-size: 38px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 32px;
+    }
+  }
+  &-h3 {
+    font-size: 40px;
+    line-height: 140%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 38px;
+    }
+    @include Responsive(m-11) {
+      font-size: 34px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 28px;
+    }
+  }
+  &-h4 {
+    font-size: 32px;
+    line-height: 137.5%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 28px;
+    }
+    @include Responsive(m-11) {
+      font-size: 24px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 20px;
+    }
+  }
+  &-h5 {
+    font-size: 28px;
+    line-height: 142.8%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 26px;
+    }
+    @include Responsive(m-11) {
+      font-size: 24px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 18px;
+    }
+  }
+  &-h6 {
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 22px;
+    }
+    @include Responsive(m-11) {
+      font-size: 20px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 16px;
+    }
+  }
+  &-h7 {
+    font-size: 20px;
+    line-height: 160%;
+    font-weight: 600;
+    @include Responsive(m-14) {
+      font-size: 18px;
+    }
+    @include Responsive(m-11) {
+      font-size: 16px;
+    }
+
+    @include Responsive(m-7) {
+      font-size: 14px;
+    }
+  }
+}
+// ----------------------- Text body style library -----------------------
+.text-body {
+  font-family: var(--f-body);
+  &-xl {
+    font-size: 20px;
+    line-height: 160%;
+
+    @include Responsive(m-14) {
+      font-size: 18px;
+    }
+    @include Responsive(m-11) {
+      font-size: 16px;
+    }
+    @include Responsive(m-7) {
+      font-size: 14px;
+    }
+
+    &-uppercase {
+      @extend .text-body-xl;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-bold {
+      @extend .text-body-xl;
+      font-weight: 700;
+    }
+
+    &-semibold {
+      @extend .text-body-xl;
+      font-weight: 600;
+    }
+
+    &-medium {
+      @extend .text-body-xl;
+      font-weight: 500;
+    }
+
+    &-regular {
+      @extend .text-body-xl;
+      font-weight: 400;
+    }
+  }
+
+  &-lg {
+    font-size: 18px;
+    line-height: 155.6%;
+
+    @include Responsive(m-14) {
+      font-size: 16px;
+    }
+    @include Responsive(m-11) {
+      font-size: 16px;
+    }
+    @include Responsive(m-7) {
+      font-size: 14px;
+    }
+
+    &-uppercase {
+      @extend .text-body-lg;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-bold {
+      @extend .text-body-lg;
+      font-weight: 700;
+    }
+
+    &-semibold {
+      @extend .text-body-lg;
+      font-weight: 600;
+    }
+
+    &-medium {
+      @extend .text-body-lg;
+      font-weight: 500;
+    }
+
+    &-regular {
+      @extend .text-body-lg;
+      font-weight: 400;
+    }
+  }
+
+  &-md {
+    font-size: 16px;
+    line-height: 150%;
+
+    @include Responsive(m-14) {
+      font-size: 14px;
+    }
+    @include Responsive(m-11) {
+      font-size: 14px;
+    }
+    @include Responsive(m-7) {
+      font-size: 12px;
+    }
+
+    &-uppercase {
+      @extend .text-body-md;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-bold {
+      @extend .text-body-md;
+      font-weight: 700;
+    }
+
+    &-semibold {
+      @extend .text-body-md;
+      font-weight: 600;
+    }
+
+    &-medium {
+      @extend .text-body-md;
+      font-weight: 500;
+    }
+
+    &-regular {
+      @extend .text-body-md;
+      font-weight: 400;
+    }
+  }
+
+  &-sm {
+    font-size: 14px;
+    line-height: 171.5%;
+
+    &-uppercase {
+      @extend .text-body-sm;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-bold {
+      @extend .text-body-sm;
+      font-weight: 700;
+    }
+
+    &-semibold {
+      @extend .text-body-sm;
+      font-weight: 600;
+    }
+
+    &-medium {
+      @extend .text-body-sm;
+      font-weight: 500;
+    }
+
+    &-regular {
+      @extend .text-body-sm;
+      font-weight: 400;
+    }
+  }
+
+  &-xs {
+    font-size: 12px;
+    line-height: 166.7%;
+
+    &-uppercase {
+      @extend .text-body-xs;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &-bold {
+      @extend .text-body-xs;
+      font-weight: 700;
+    }
+
+    &-semibold {
+      @extend .text-body-xs;
+      font-weight: 600;
+    }
+
+    &-medium {
+      @extend .text-body-xs;
+      font-weight: 500;
+    }
+
+    &-regular {
+      @extend .text-body-xs;
+      font-weight: 400;
+    }
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.input-trans {
+  @extend .text-body-sm-regular;
+  display: flex;
+  width: 100%;
+  border: none;
+  &:disabled {
+    background: transparent;
+  }
+}
+
+select.input-trans {
+  width: 100%;
+  appearance: none;
+  /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../../assets/image/icon/arrow-down.svg") no-repeat right 0
+    center;
+}
+
+.truncate-2row {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.truncate-3row {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.truncate-4row {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  label {
+    @extend .text-heading-h7;
+    color: var(--neutral-600);
+  }
+  .input-field {
+    @extend .text-body-md-regular;
+    display: flex;
+    padding: 16px 26px;
+    align-items: flex-start;
+    border: 1px solid var(--neutral-400);
+    width: 100%;
+    color: var(--neutral-800);
+    background: var(--white);
+    &::placeholder {
+      color: var(--neutral-500);
+    }
+    &:focus {
+      border-color: var(--primary);
+      caret-color: var(--primary);
+    }
+  }
+
+  select.input-field {
+    width: 100%;
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("../image/icon/chev-dropdown.svg") no-repeat right 14px
+      center;
+    /* Adjust background position here */
+    background-size: 20px 20px;
+    /* Adjust background size here */
+
+    &::after {
+      content: "";
+      /* Unicode for down arrow */
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      /* Allow click through */
+    }
+  }
+}
